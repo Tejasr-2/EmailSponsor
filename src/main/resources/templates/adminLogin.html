@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<meta charset="ISO-8859-1">
+<title>Admin Login Page</title>
+<style>
+.column {
+	text-align: right;
+	width: 30%;
+	padding: 5px;
+	text-decoration: underline;
+}
+
+.madhe {
+	margin: auto;
+	width: 60%;
+	text-align: center;
+}
+</style>
+</head>
+<body>
+
+	<div class="madhe">
+		<h1>Welcome to SphereDigital Admin Page</h1>
+
+		<a th:href=@{/addOfferPage}>Add Offer</a>
+
+
+
+		<table class="table">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col">Offer ID</th>
+					<th scope="col">Offer Name</th>
+					<th scope="col">Redirection Link</th>
+					<th scope="col">UnSubscribe Link</th>
+					<th scope="col">Pay out</th>
+					<th scope="col">Category</th>
+					<th scope="col">Operations</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="offer :${allOffers}">
+					<td th:text="${offer.offerId}">
+					<td th:text="${offer.offerName}">
+					<td th:text="${offer.redirectLink}">
+					<td th:text="${offer.unsubLink}">
+					<td th:text="${offer.payout}">
+					<td th:text="${offer.cpcOrCpa}">
+					<td><a class="btn btn-primary"
+						th:href="@{/editOffer(id=${offer.offerId})}" role="button">Edit</a>
+						<a class="btn btn-danger"
+						th:href="@{/deleteOffer(id=${offer.offerId})}" role="button"
+						onclick="return confirm('Are you sure? \nYou want to Delete This Offer')">Delete</a></td>
+
+
+				</tr>
+			</tbody>
+
+		</table>
+	</div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang ="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Add new Offer</title>
+</head>
+<body>
+<div align="center">
+<h1>New Offer addition portal</h1>
+
+<form action="#" th:action = "addOffer" th:object="${offer}" method = "post">
+<input type = "text" th:field = *{offerId} placeholder= "Offer Id" required="required"><br><br>
+<input type = "text" th:field = *{offerName} placeholder= "Offer Name" required="required"><br><br>
+<input type = "text" th:field = *{redirectLink} placeholder= "Redirection Link" required="required"><br><br>
+<input type = "text" th:field = *{unsubLink} placeholder= "Unsubcribe Link" required="required"><br><br>
+<input type = "text" th:field = *{payout} placeholder= "Payout" required="required"><br><br>
+<input type = "text" th:field = *{cpcOrCpa} placeholder= "CPC or CPA" required="required"><br><br>
+<input type = "submit" value = "Create New Offer">
+</form>
+</div>
+
+</body>
+</html>

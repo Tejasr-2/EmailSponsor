@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>SphereDigital Login</title>
+</head>
+<body>
+<div align="center">
+<h1>This is a Login Page</h1>
+
+<form action="#" th:action="doLogin" th:object="${user}" method = "post" >
+<input type ="text" th:field=*{name} placeholder ="User Id"><br>
+<input type ="text" th:field=*{pass} placeholder ="Password"><br>
+<input type = "submit" value = "Submit">
+</form>
+</div>
+
+</body>
+</html>
